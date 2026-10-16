@@ -1,0 +1,90 @@
+<!DOCTYPE html> <!-- 이 문서가 HTML5 최신 표준 문법으로 작성되었음을 선언합니다. -->
+<html lang="ko"> <!-- 웹 문서의 기본 언어를 한국어(ko)로 설정하여 스크린 리더기나 번역기에 정확한 정보를 줍니다. -->
+<head>
+  <meta charset="UTF-8"> <!-- 텍스트 인코딩을 UTF-8로 설정해 한글이나 특수문자가 깨지지 않도록 방지합니다. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- 모바일 기기에서도 화면 너비에 맞게(device-width) 100% 비율(1)로 출력되도록 하는 반응형 웹의 필수 태그입니다. -->
+  <title>김코딩 블로그</title> <!-- 브라우저 탭 상단에 표시되는 제목입니다. -->
+  
+  <!-- Bootstrap CSS 연결: 외부(CDN)에서 부트스트랩이 미리 만들어둔 CSS 디자인 파일(클래스들)을 가져옵니다. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- 헤더 영역 -->
+  <!-- bg-dark: 배경색을 어두운 색으로 지정 / text-white: 글자색을 흰색으로 지정 / py-4: 위아래(y축) 안쪽 여백(padding)을 1.5rem(4)만큼 줍니다. -->
+  <header class="bg-dark text-white py-4">
+    <!-- container: 내부 콘텐츠가 화면 전체로 퍼지지 않고 중앙에 안정적으로 모이게 하는 반응형 뼈대 박스입니다. -->
+    <div class="container">
+      <!-- fs-4: 글자 크기(font-size)를 4단계로 키움 / fw-bold: 폰트 굵기(font-weight)를 두껍게 / mb-0: 아래쪽 바깥 여백(margin-bottom)을 0으로 없애서 깔끔하게 붙입니다. -->
+      <p class="fs-4 fw-bold mb-0">김코딩 블로그</p>
+    </div>
+  </header>
+
+  <!-- 메인 본문 영역 -->
+  <!-- my-5: 위아래(y축) 바깥 여백(margin)을 3rem(5)만큼 크게 주어 헤더/푸터와 거리를 띄웁니다. -->
+  <main class="container my-5">
+    
+    <!-- row: 그리드 시스템의 핵심. 칸(col)들을 가로 한 줄로 나란히 배치하기 위한 부모 틀입니다. -->
+    <!-- g-3: 칸과 칸 사이의 간격(gap)을 상하좌우 1rem(3)만큼 띄워줍니다. -->
+    <div class="row g-3">
+      
+      <!-- [1] 왼쪽 메인 콘텐츠(게시글) 칸 -->
+      <!-- col-12: 모바일 등 기본 화면에서는 12칸을 전부 차지해 한 줄을 혼자 씁니다. -->
+      <!-- col-lg-8: 하지만 화면 폭이 PC 크기(lg, 992px 이상)가 되면 12칸 중 8칸만 차지하게 줄어듭니다. -->
+      <article class="col-12 col-lg-8">
+        <!-- badge bg-primary: 파란색(primary) 배경을 가진 작은 배지(버튼 모양 꼬리표) 컴포넌트를 만듭니다. -->
+        <span class="badge bg-primary">NEW</span>
+        <!-- mt-2: 위쪽 바깥 여백(margin-top)을 0.5rem(2) 주어 위 배지와의 사이를 살짝 띄웁니다. -->
+        <h1 class="mt-2">Bootstrap을 처음 써 봤습니다</h1>
+        <!-- text-body-secondary: 부수적인 정보(날짜, 작성자 등)를 표현할 때 쓰이며, 글자색을 약간 흐린 회색으로 바꿉니다. -->
+        <p class="text-body-secondary">김코딩 · 읽는 데 1분</p>
+        <p>미리 만들어 둔 클래스로 화면을 빠르게 만들 수 있었습니다.</p>
+        
+        <!-- 모달 열기 버튼 -->
+        <!-- btn btn-primary: 기본 파란색 버튼 디자인 적용 -->
+        <!-- data-bs-toggle="modal": 이 버튼을 누르면 모달 기능이 켜집니다. -->
+        <!-- data-bs-target="#subscribe": 아이디가 'subscribe'인 요소를 찾아내서 띄워줍니다. (이름이 일치해야 함!) -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#subscribe">구독하기</button>
+      </article>
+
+      <!-- [2] 오른쪽 사이드바 칸 -->
+      <!-- col-12: 모바일에서는 12칸 차지(본문 아래로 밀림) / col-lg-4: 넓은 화면(lg)에선 남은 4칸을 차지해 본문 옆에 나란히 놓입니다. -->
+      <aside class="col-12 col-lg-4">
+        <!-- h5: 시맨틱 태그로는 h2를 쓰되, 실제 화면에 보이는 크기는 h5(작은 소제목 크기)로 줄여줍니다. -->
+        <h2 class="h5">최근 글</h2>
+        <!-- list-group: 테두리가 둘러진 깔끔한 목록(리스트) 형태의 컴포넌트를 감싸는 부모 클래스입니다. -->
+        <ul class="list-group">
+          <!-- list-group-item: 목록 안의 개별 항목(li) 하나하나에 패딩과 테두리를 예쁘게 넣어주는 클래스입니다. -->
+          <li class="list-group-item">Git으로 첫 커밋 남기기</li>
+          <li class="list-group-item">반응형 웹과 미디어 쿼리</li>
+          <li class="list-group-item">Flexbox로 가로 배치하기</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 구독하기 모달 창 영역 -->
+  <!-- id="subscribe": 위쪽 구독하기 버튼의 target 속성과 일치해야 버튼을 눌렀을 때 이 창이 뜹니다. -->
+  <!-- fade: 모달 창이 나타날 때 팍! 하고 뜨지 않고 부드럽게 스르륵(fade) 나타나게 하는 애니메이션입니다. -->
+  <div class="modal fade" id="subscribe" tabindex="-1" aria-labelledby="subscribe-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- 모달의 상단 제목 부분 -->
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="subscribe-title">구독 안내</h2>
+          <!-- btn-close: 누르면 창이 닫히는 [X] 모양의 버튼 컴포넌트입니다. data-bs-dismiss 속성으로 닫기 기능을 수행합니다. -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+        </div>
+        <!-- 모달의 실제 내용이 들어가는 본문 부분 -->
+        <div class="modal-body">
+          <p class="mb-0">새 글이 올라오면 메일로 알려 드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (bundle 버전: 동작에 필요한 모든 스크립트가 포함됨) -->
+  <!-- 화면 내용이 다 불려온 뒤에 스크립트가 실행되도록 </body> 바로 위에 적어줌. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
