@@ -1,35 +1,46 @@
-// 1. 바뀌지 않는 값 (상수 선언)
-// TODO 지우고 const 적용 (제목, 작가, 가격은 고정값)
-const title = "처음 만나는 JavaScript"; 
-const author = "김코딩";
-const price = 18000;
+// 바꿔 가며 확인할 값 세팅 (상수 선언)
+const age = 15;
+const day = "토";          // "월" ~ "일"
+const isMember = true;
 
-// 2. 바뀌는 값 (변수 선언)
-// TODO 지우고 let 적용 (재고는 팔리면 줄어듦)
-let stock = 3; 
-let isSoldOut = false; // 품절 여부 (바뀔 수 있음)
+// 1. 나이에 따라 기본 요금 산정 — 어린 나이부터 차례로 검사
+let price;
+if (age < 13) {
+  price = 20000; // 13세 미만 요금
+} else if (age < 19) { // TODO 1: 19세 미만을 나타내는 비교 연산자 '<'
+  price = 30000; // 13세 이상 ~ 19세 미만 요금
+} else {
+  price = 46000; // 19세 이상 성인 요금
+}
 
-// 3. 일부러 비워 둔 값
-// TODO 지우고 null 적용 (쿠폰이 아직 없음을 명시)
-let coupon = null; 
+// 2. 주말 여부 판별
+// TODO 2: 토요일 '또는' 일요일이면 참을 반환하는 OR 연산자 '||'
+const isWeekend = day === "토" || day === "일";
 
-// 4. 재고 감소 로직 (한 권이 팔림)
-stock = 2; // let으로 선언했으므로 값 변경 가능
+// 3. 평일 회원 할인 적용
+// TODO 3: 평일(!isWeekend) '그리고' 회원(isMember) 두 조건을 모두 만족하는 AND 연산자 '&&'
+if (!isWeekend && isMember) {
+  // TODO 4: 기존 price에서 5000을 빼서 다시 담는 복합 대입 연산자 '-='
+  price -= 5000; 
+}
 
-// 5. 콘솔 출력 (기본 정보)
-console.log(`${title} · ${author}`);
-// TODO 지우고 price 변수 연결
-console.log(`가격 ${price}원 · 재고 ${stock}권`); 
-console.log("품절 :", isSoldOut);
-console.log("쿠폰 :", coupon);
+// 4. 요일마다 안내 문구 설정
+let notice;
+switch (day) {
+  case "토":
+  case "일":
+    notice = "주말에는 대기 줄이 깁니다";
+    // TODO 5: switch 문을 끝내고 빠져나가는 키워드 'break'
+    break; 
+  default: // 주말을 제외한 나머지 평일
+    notice = "평일에는 여유롭게 즐길 수 있습니다";
+}
 
-// 6. 자료형(Type) 확인 출력
-// TODO 지우고 typeof 연산자 적용
-console.log("title :", typeof title); // 결과: string
-console.log("price :", typeof price); // 결과: number
-console.log("isSoldOut :", typeof isSoldOut); // 결과: boolean
-console.log("coupon :", typeof coupon); // 결과: object (null의 특이성)
+// 5. 주말인지 평일인지 한 단어로 변환
+// TODO 6: isWeekend가 참이면 "주말", 거짓이면 "평일"을 반환하는 삼항 연산자 '?'
+const dayType = isWeekend ? "주말" : "평일";
 
-// 7. 경고 메시지 출력
-// TODO 지우고 warn 메서드 적용 (노란색 글씨로 출력)
-console.warn("재고가 2권 남았습니다");
+// 6. 콘솔에 최종 결과 출력
+console.log(`나이 ${age}세 · ${day}요일(${dayType}) · 회원 ${isMember}`);
+console.log(`입장료 ${price}원`);
+console.log(notice);
