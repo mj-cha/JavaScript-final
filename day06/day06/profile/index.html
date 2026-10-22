@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>차명진 포트폴리오</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <a href="#" class="logo">차명진.</a>
+        <ul class="menu">
+          <li><a href="#intro">소개</a></li>
+          <li><a href="#work">작업</a></li>
+          <li><a href="#contact">연락처</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="intro" class="section intro-section">
+        <div class="intro-content">
+          <h1 class="greeting">
+            안녕하세요, 새로운 서비스를 제작하는 개발자입니다.
+          </h1>
+          <p class="lead">
+            구스피크에서 CTO로 재직 중이며, React와 Next.js를 기반으로 사용자
+            중심의 프로덕트를 만들고 IT 교육에 힘쓰고 있습니다. 오즈코딩스쿨
+            화이팅~
+          </p>
+        </div>
+        <img
+          src="test01.jpg"
+          alt="해질녘 도시를 배경으로 언덕을 달리는 사람의 뒷모습"
+          class="profile-img"
+        />
+      </section>
+
+      <section id="work" class="section">
+        <h2>작업</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>개인 소개 페이지</h3>
+            <p>
+              HTML과 CSS를 활용해 모바일 퍼스트 반응형으로 제작한
+              포트폴리오입니다.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>회원가입 폼</h3>
+            <p>
+              다양한 입력 요소와 시맨틱 마크업을 고려하여 기본 검증 폼을
+              구현했습니다.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>틸(TIL) 성장 일지</h3>
+            <p>
+              개발자 성장을 위한 TIL 웹 서비스의 데이터베이스 스키마와 기획을
+              정리했습니다.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="badge">NEW</span>
+            <h3>CSS 상자모델 분석</h3>
+            <p>
+              HTML 요소의 margin, border, padding, content 구조를 심층적으로
+              다루었습니다.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>연락처</h2>
+        <form action="/contact" method="post" class="contact-form">
+          <fieldset>
+            <legend>문의 남기기</legend>
+
+            <div class="form-group">
+              <label for="name">이름</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="홍길동"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">내용</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="궁금한 점을 남겨주세요."
+              ></textarea>
+            </div>
+
+            <button type="submit">메시지 보내기</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <p>&copy; 2026 차명진. All</p>
+    </footer>
+  </body>
+</html>
