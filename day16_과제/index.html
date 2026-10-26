@@ -1,0 +1,32 @@
+<!DOCTYPE html> <!-- HTML5 표준 문서 선언함 -->
+<html lang="ko"> <!-- 문서 기본 언어를 한국어로 설정함 -->
+<head> <!-- 메타데이터 및 스타일 설정 영역 시작 -->
+  <meta charset="UTF-8"> <!-- 한글 깨짐 방지용 UTF-8 인코딩 적용함 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 모바일 반응형 뷰포트 배율 설정함 -->
+  <title>물 마시기 기록</title> <!-- 브라우저 탭 제목 지정함 -->
+  <style> /* 내부 CSS 스타일 시트 시작 */
+    body {
+      padding: 24px; /* 화면 안쪽 여백을 24px로 확보함 */
+      font-family: system-ui, sans-serif; /* 운영체제 기본 깔끔한 고딕 폰트 적용함 */
+    }
+    .done { /* 목표 달성 시 JS가 붙여줄 클래스 스타일 정의함 */
+      color: #1e7a3c; /* 글자색을 짙은 초록색으로 변경함 */
+      font-weight: bold; /* 글자 두께를 굵게 강조함 */
+    }
+  </style>
+</head>
+<body> <!-- 화면 표시 본문 영역 시작 -->
+  <h1>오늘 물 마시기</h1> <!-- 대제목 출력함 -->
+  <label for="goal">목표</label> <!-- id="goal"인 select와 연결된 이름표임 -->
+  <select id="goal"> <!-- 목표 잔 수를 고르는 드롭다운 메뉴 생성함 -->
+    <option value="6">6잔</option> <!-- 선택 시 JS에 문자열 "6" 전달함 -->
+    <option value="8" selected>8잔</option> <!-- selected 속성으로 처음 열었을 때 8잔이 기본 선택되게 함 -->
+    <option value="10">10잔</option> <!-- 선택 시 JS에 문자열 "10" 전달함 -->
+  </select>
+  <p id="status">0잔 / 목표 8잔</p> <!-- 현재 마신 잔 수와 목표를 보여줄 상태 문단임 -->
+  <button id="plus-btn" type="button">한 잔 마셨어요</button> <!-- 클릭 시 잔 수를 1 올릴 일반 버튼임 -->
+  <button id="reset-btn" type="button">처음부터</button> <!-- 클릭 시 잔 수를 0으로 초기화할 일반 버튼임 -->
+
+  <script src="water.js"></script> <!-- 같은 폴더의 water.js 파일을 연결해 실행함 -->
+</body>
+</html>
