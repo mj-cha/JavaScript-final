@@ -1,0 +1,22 @@
+<!DOCTYPE html> <!-- HTML5 표준 문서임을 선언함 -->
+<html lang="ko"> <!-- 문서 기본 언어를 한국어로 설정함 -->
+<head> <!-- 메타데이터 및 스타일 설정 영역 시작 -->
+  <meta charset="UTF-8"> <!-- 한글 깨짐 방지용 UTF-8 인코딩 적용함 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 모바일 반응형 뷰포트 배율 설정함 -->
+  <title>도서 대출 확인</title> <!-- 브라우저 탭 제목을 지정함 -->
+  <style> /* 내부 CSS 스타일 시트 시작 */
+    body {
+      padding: 24px; /* 화면 안쪽 여백을 24px로 설정함 */
+      font-family: system-ui, sans-serif; /* 운영체제 기본 고딕 폰트를 적용함 */
+    }
+  </style>
+</head>
+<body> <!-- 화면 표시 본문 영역 시작 -->
+  <h1>오즈 도서관</h1> <!-- 대제목 텍스트를 출력함 -->
+  <button id="prince-btn" type="button">어린 왕자 빌리기</button> <!-- 어린 왕자 대출 확인용 버튼 생성함 -->
+  <button id="demian-btn" type="button">데미안 빌리기</button> <!-- 데미안 대출 확인용 버튼 생성함 -->
+  <p id="status">빌릴 책을 고르세요</p> <!-- 대출 확인 진행 상태와 결과를 보여줄 문단임 -->
+
+  <script src="library.js"></script> <!-- 같은 폴더의 library.js 스크립트 파일을 연결함 -->
+</body>
+</html>
