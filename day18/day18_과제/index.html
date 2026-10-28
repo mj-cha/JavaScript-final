@@ -1,0 +1,28 @@
+<!DOCTYPE html> <!-- HTML5 문서 선언 -->
+<html lang="ko"> <!-- 문서 언어 한국어 -->
+<head> <!-- 설정·스타일 영역 시작 -->
+  <meta charset="UTF-8"> <!-- 한글 깨짐 방지 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 모바일 화면 폭에 맞춤 -->
+  <title>글 한 편 보기</title> <!-- 브라우저 탭 제목 -->
+  <style> /* 이 페이지 전용 CSS */
+    body {
+      padding: 24px; /* 화면 안쪽 여백 */
+      font-family: system-ui, sans-serif; /* 시스템 기본 글꼴 */
+    }
+    #title {
+      font-weight: bold; /* 글 제목(id="title")은 굵게 */
+    }
+  </style>
+</head>
+<body> <!-- 화면에 보이는 영역 시작 -->
+  <h1>오늘의 글</h1> <!-- 큰 제목 -->
+  <label for="post-id">글 번호 (1~100)</label> <!-- 입력칸 이름표 (for로 #post-id와 연결) -->
+  <input id="post-id" type="number" value="1"> <!-- 글 번호 입력칸, 처음 값 1 → JS에서 idInput.value로 읽음 -->
+  <button id="show-btn" type="button">보기</button> <!-- 누르면 showPost 실행 -->
+  <p id="status"></p> <!-- "불러오는 중…" 표시 자리 -->
+  <p id="title"></p> <!-- 글 제목 자리 -->
+  <p id="body"></p> <!-- 글 내용 또는 오류 문구 자리 -->
+
+  <script src="post.js"></script> <!-- body 맨 끝에서 post.js 실행 (요소가 다 생긴 뒤라 querySelector가 찾을 수 있음) -->
+</body>
+</html>
