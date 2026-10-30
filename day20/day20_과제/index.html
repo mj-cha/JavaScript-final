@@ -1,0 +1,36 @@
+<!DOCTYPE html>                            <!-- HTML5 문서 선언 -->
+<html lang="ko">                           <!-- 문서 언어 한국어 -->
+<head>                                     <!-- [설정 영역] 화면엔 안 보임 -->
+  <meta charset="UTF-8">                   <!-- 한글 깨짐 방지 -->
+  <!-- 모바일 화면 폭에 맞춤 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>읽은 글 표시하기</title>          <!-- 브라우저 탭 제목 -->
+  <style>                                 
+    body {
+      padding: 24px;                       /* 화면 안쪽 여백 */
+      font-family: system-ui, sans-serif;  /* 시스템 기본 글꼴 */
+    }
+    #list li {                             /* 목록의 글 한 줄마다 */
+      margin-bottom: 6px;                  /* 줄 사이 간격 */
+      cursor: pointer;                     /* 마우스를 손가락 모양으로 */
+    }
+    #list li.read {                        /* read 딱지 붙은 글은 */
+      color: #9aa7b1;                      /* 회색 글씨 */
+    }
+    #list li.read::after {                 /* read 딱지 붙은 글 끝에 */
+      content: " (읽음)";                  /* 「 (읽음)」 글자를 덧붙임 */
+    }
+  </style>
+</head>
+<body>                                     <!-- [화면 영역] 여기부터 보임 -->
+  <h1>오늘 읽을 글</h1>                    <!-- 큰 제목 -->
+  <p id="status"></p>                      <!-- 상태 문구 자리 (#status) -->
+  <!-- 실패했을 때만 보이는 버튼 (hidden = 처음엔 숨김) -->
+  <button id="retry-btn" type="button" hidden>다시 시도</button>
+  <ul id="list"></ul>                      <!-- 글 목록 자리 (#list) -->
+  <!-- 읽음 표시 지우기 버튼 (#reset-btn) -->
+  <button id="reset-btn" type="button">읽음 표시 모두 지우기</button>
+
+  <script src="posts.js"></script>         <!-- 요소가 다 생긴 뒤 JS 실행 -->
+</body>
+</html>
