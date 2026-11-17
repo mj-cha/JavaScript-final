@@ -1,4 +1,4 @@
-{ // 패키지 설정 파일(JSON) 시작
+{ 
   "name": "vite-project", 
   "private": true, 
   "version": "0.0.0", 
